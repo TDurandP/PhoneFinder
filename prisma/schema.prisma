@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Phone {
+  phone_id        Int      @id @default(autoincrement())
+  phone_name String @db.VarChar(255)
+  phone_IMEI String @db.VarChar(17)
+  phone_color String @db.VarChar(10)
+  phone_storage String @db.VarChar(3)
+  phone_brand_id String @db.VarChar(255)
+
+}
+
+model Brand {
+  brand_id        Int      @id @default(autoincrement())
+  brand_label String @db.VarChar(255)
+}

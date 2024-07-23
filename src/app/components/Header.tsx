@@ -6,10 +6,10 @@ export default function Header() {
     const router = useRouter();
 
     const addPhone = () => {
-      router.push("pages/crud/add");
+      router.push("/pages/crud/phone/add");
     }
   return (
-      <nav className='w-full h-[100px] flex flex-row justify-around items-center bg-cyan-900 mb-12'>
+      <nav className='w-full h-[100px] flex flex-row justify-around items-center bg-cyan-900'>
           <div className='h-full flex flex-col justify-center items-center'>
               <h1 className="text-2xl">PhoneFinder</h1>
               <h2 className="text-xl">Helps you to find your phone !</h2>
