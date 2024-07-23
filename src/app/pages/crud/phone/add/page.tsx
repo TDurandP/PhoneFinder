@@ -7,6 +7,7 @@ import PickUp from '../../../../components/PickUp';
 
 export default function Page() {
 
+  const router = useRouter();
   const phoneType = {phone_name: '', phone_color: '', phone_IMEI: '', phone_storage: '', phone_brand_id: ''}
 
   const [phoneForm, setPhoneForm] = useState(phoneType);
@@ -27,18 +28,9 @@ export default function Page() {
 
 
     if (response.status === 200) {
-      console.log("STATUS OK !");
-      //router.push("/admin/ok");
+      router.push("/");
     }
   };
-
-
-  const options = [
-    { value: '', text: '--Choose an option--' },
-    { value: 'apple', text: 'Apple 🍏' },
-    { value: 'banana', text: 'Banana 🍌' },
-    { value: 'kiwi', text: 'Kiwi 🥝' },
-  ];
 
 
   return (
@@ -63,8 +55,8 @@ export default function Page() {
 
 <div className='flex flex-row justify-start items-center m-4 h-[40px]'>
   <label className='text-white h-full z-10 bg-gold border-b-4 border-gold p-2 w-[150px] text-md text-center bg-cyan-900' htmlFor="phone_storage">Storage</label>
-  <input className={`text-cyan-800 h-full focusAlt outline-none w-[350px] text-md p-2 border-b-4 border-gold bg-zinc-300`} type="text" name="phone_storage" id="phone_storage" value={phoneForm.phone_storage} onChange={(e) => setPhoneForm({ ...phoneForm, phone_storage: e.target.value })} />
-</div>
+  <input className={`text-cyan-800 h-full focusAlt outline-none w-[350px] text-md p-2 border-b-4 border-gold bg-zinc-300`} type="number" step={2} name="phone_storage" id="phone_storage" value={phoneForm.phone_storage} onChange={(e) => setPhoneForm({ ...phoneForm, phone_storage: e.target.value })} />
+  </div>
 
 <PickUp value={phoneForm.phone_brand_id} onChange={(e) => setPhoneForm({ ...phoneForm, phone_brand_id: e.target.value })}/>
 

@@ -6,7 +6,7 @@ import PopUp from '../../../../components/PopUp';
 
 
 export default function Page() {
-
+  const router = useRouter();
   const brandType = {brand_label: ''};
   const errorType = {status: 0, message: ''};
 
@@ -31,13 +31,10 @@ export default function Page() {
 
 
 
-    /*
+    
     if (response.status === 200) {
-      console.log("STATUS OK !");
-      //router.push("/admin/ok");
-    } else {
-        
-    }*/
+      router.push("/");
+    }
   };
 
 

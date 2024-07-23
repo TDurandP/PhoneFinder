@@ -30,7 +30,7 @@ export default function PickUp({value, onChange}) {
     return (
 
         <div className='w-[200px] h-[30px]'>
-            <select name="phone_brand_id" className='w-full h-full bg-cyan-500 capitalize' value={selectData[0]} onChange={onChange}>
+            <select name="phone_brand_id" className='w-full h-full bg-cyan-500 capitalize' value={value} onChange={onChange}>
                 {selectData ? selectData.map((element, index) => <option key={index} className='text-white' value={element.brand_id}>{element.brand_label}</option>) : <option value="0" selected>Récupération des données en cours..</option>}
             </select>
         </div>
